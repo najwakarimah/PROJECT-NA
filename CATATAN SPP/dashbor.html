@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pembayaran SPP Sekolah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #003366;
+            padding: 20px 0;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        /* Card for sections */
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+        }
+
+        .card h2 {
+            color: #003366;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #005bb5;
+        }
+
+        .button-secondary {
+            background-color: #f4f4f4;
+            color: #003366;
+            border: 2px solid #003366;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .button-secondary:hover {
+            background-color: #003366;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .payment-options button {
+            width: 48%;
+            margin: 10px 1%;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sistem Pembayaran SPP Sekolah</h1>
+        <p>Proses pembayaran yang mudah dan cepat untuk orang tua</p>
+    </header>
+
+    <div class="container">
+        <!-- Halaman Login -->
+        <div id="login-page" class="card">
+            <h2>Login Orang Tua/Wali</h2>
+            <input type="text" id="username" placeholder="Username" class="input-field" required><br><br>
+            <input type="password" id="password" placeholder="Password" class="input-field" required><br><br>
+            <button class="button" onclick="login()">Login</button>
+        </div>
+
+        <!-- Halaman Cek Tagihan -->
+        <div id="bill-page" class="card hidden">
+            <h2>Tagihan SPP</h2>
+            <p>Total Tagihan: <strong>Rp 1.000.000</strong></p>
+            <button class="button" onclick="choosePayment()">Pilih Pembayaran</button>
+        </div>
+
+        <!-- Halaman Pilih Pembayaran -->
+        <div id="payment-page" class="card hidden">
+            <h2>Pilih Metode Pembayaran</h2>
+            <div class="payment-options">
+                <button class="button-secondary" onclick="payWithBank()">Transfer Bank</button>
+                <button class="button-secondary" onclick="payWithEWallet()">E-Wallet</button>
+            </div>
+        </div>
+
+        <!-- Halaman Konfirmasi Pembayaran -->
+        <div id="confirmation-page" class="card hidden">
+            <h2>Konfirmasi Pembayaran</h2>
+            <p>Pembayaran berhasil! Terima kasih telah membayar tagihan SPP.</p>
+            <button class="button" onclick="viewHistory()">Lihat Riwayat Pembayaran</button>
+        </div>
+
+        <!-- Halaman Riwayat Pembayaran -->
+        <div id="history-page" class="card hidden">
+            <h2>Riwayat Pembayaran</h2>
+            <ul>
+                <li>Tagihan 1: Lunas - Rp 1.000.000</li>
+            </ul>
+            <button class="button" onclick="backToBillPage()">Kembali ke Tagihan</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sistem Pembayaran SPP Sekolah | Semua Hak Dilindungi</p>
+    </footer>
+
+    <script>
+        function login() {
+            // Simulasikan login
+            document.getElementById("login-page").classList.add("hidden");
+            document.getElementById("bill-page").classList.remove("hidden");
+        }
+
+        function choosePayment() {
+            document.getElementById("bill-page").classList.add("hidden");
+            document.getElementById("payment-page").classList.remove("hidden");
+        }
+
+        function payWithBank() {
+            alert("Silakan transfer melalui bank ke nomor rekening yang tertera.");
+            document.getElementById("payment-page").classList.add("hidden");
+            document.getElementById("confirmation-page").classList.remove("hidden");
+        }
+
+        function payWithEWallet() {
+            alert("Silakan bayar menggunakan aplikasi E-Wallet Anda.");
+            document.getElementById("payment-page").classList.add("hidden");
+            document.getElementById("confirmation-page").classList.remove("hidden");
+        }
+
+        function viewHistory() {
+            document.getElementById("confirmation-page").classList.add("hidden");
+            document.getElementById("history-page").classList.remove("hidden");
+        }
+
+        function backToBillPage() {
+            document.getElementById("history-page").classList.add("hidden");
+            document.getElementById("bill-page").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>

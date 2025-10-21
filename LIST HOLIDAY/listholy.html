@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Liburan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Basic reset *//* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body & Container */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            transition: 0.3s ease;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #0d47a1;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        /* Kategori */
+        .category {
+            margin-bottom: 30px;
+        }
+        
+        .category h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a237e;
+            border-left: 4px solid #64b5f6;
+            padding-left: 10px;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            color: #333;
+            transition: 0.2s;
+        }
+        
+        input[type="checkbox"] {
+            accent-color: #2196f3;
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+        }
+        
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2196f3;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:hover {
+            background-color: #1976d2;
+        }
+        
+        button:active {
+            background-color: #0d47a1;
+        }
+        
+        /* Responsif */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+        
+            .container {
+                padding: 20px;
+            }
+        
+            li {
+                font-size: 0.95rem;
+            }
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checklist Liburan</h1>
+        <p>Liburanmu akan lebih terencana dengan checklist ini!</p>
+        
+        <div class="category" id="shortTrip">
+            <h2>Liburan Pendek (1-2 Hari)</h2>
+            <ul>
+                <li><input type="checkbox"> Tentukan tujuan</li>
+                <li><input type="checkbox"> Booking transport/penginapan</li>
+                <li><input type="checkbox"> Siapkan uang & dokumen</li>
+                <li><input type="checkbox"> 1-2 pasang baju</li>
+                <li><input type="checkbox"> Peralatan mandi mini</li>
+                <li><input type="checkbox"> Charger & power bank</li>
+                <li><input type="checkbox"> Obat pribadi</li>
+                <li><input type="checkbox"> KTP / Tiket</li>
+                <li><input type="checkbox"> Uang tunai</li>
+            </ul>
+        </div>
+
+        <div class="category" id="longTrip">
+            <h2>Liburan Lama (3+ Hari)</h2>
+            <ul>
+                <li><input type="checkbox"> Itinerary singkat</li>
+                <li><input type="checkbox"> Booking penginapan & tiket</li>
+                <li><input type="checkbox"> Tukar uang (jika ke luar negeri)</li>
+                <li><input type="checkbox"> Cek kondisi fisik</li>
+                <li><input type="checkbox"> 3-5 set pakaian</li>
+                <li><input type="checkbox"> Pakaian tidur & dalam</li>
+                <li><input type="checkbox"> Jaket/sweater</li>
+                <li><input type="checkbox"> Toiletries lengkap</li>
+                <li><input type="checkbox"> Charger, power bank, adaptor</li>
+                <li><input type="checkbox"> Obat pribadi, vitamin</li>
+                <li><input type="checkbox"> Dokumen penting</li>
+            </ul>
+        </div>
+
+        <div class="category" id="concert">
+            <h2>Nonton Konser / Event</h2>
+            <ul>
+                <li><input type="checkbox"> Beli tiket & simpan barcode</li>
+                <li><input type="checkbox"> Cek jam & lokasi</li>
+                <li><input type="checkbox"> Pilih outfit nyaman</li>
+                <li><input type="checkbox"> Tas kecil</li>
+                <li><input type="checkbox"> Power bank</li>
+                <li><input type="checkbox"> Botol minum lipat</li>
+                <li><input type="checkbox"> Jas hujan/ponco</li>
+                <li><input type="checkbox"> Uang secukupnya</li>
+            </ul>
+        </div>
+
+        <div class="category" id="beach">
+            <h2>Liburan ke Pantai</h2>
+            <ul>
+                <li><input type="checkbox"> Cek ombak & cuaca</li>
+                <li><input type="checkbox"> Cek akses transportasi</li>
+                <li><input type="checkbox"> Siapkan kebutuhan berenang</li>
+                <li><input type="checkbox"> Pakaian renang</li>
+                <li><input type="checkbox"> Sunblock</li>
+                <li><input type="checkbox"> Kacamata hitam & topi</li>
+                <li><input type="checkbox"> Baju ganti</li>
+                <li><input type="checkbox"> Sandal jepit</li>
+                <li><input type="checkbox"> Handuk pantai</li>
+            </ul>
+        </div>
+        <button id="clearAll">Clear Semua Checklist</button>
+
+    </div>
+
+    <script src="script.js">// Fungsi untuk menghapus centang semua checkbox
+function clearAllCheckboxes() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => checkbox.checked = false); // Menghapus semua centang
+    localStorage.removeItem('checkboxState'); // Menghapus status dari localStorage
+}
+
+// Event listener untuk tombol Clear All
+document.getElementById('clearAll').addEventListener('click', clearAllCheckboxes);
+
+// Fungsi untuk memuat status checkbox dari localStorage
+function loadCheckboxState() {
+    const savedState = JSON.parse(localStorage.getItem('checkboxState'));
+    if (savedState) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        savedState.forEach((state, index) => {
+            checkboxes[index].checked = state;
+        });
+    }
+}
+
+// Menyimpan status checkbox ke localStorage saat berubah
+function saveCheckboxState() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxState = [];
+    checkboxes.forEach((checkbox, index) => {
+        checkboxState[index] = checkbox.checked;
+    });
+    localStorage.setItem('checkboxState', JSON.stringify(checkboxState));
+}
+
+// Load status checkbox saat halaman dimuat
+window.addEventListener('load', loadCheckboxState);
+
+// Simpan status setiap kali ada perubahan pada checkbox
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', saveCheckboxState);
+});
+
+        </script>
+</body>
+</html>

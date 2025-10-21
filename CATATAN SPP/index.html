@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sekolah SMA 2</title>
+    <style>
+        /* Reset dan style dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: #388e3c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        header nav ul li {
+            margin: 0 25px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #2c6b2f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #66bb6a;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-text h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background-color: #2c6b2f;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .hero .btn:hover {
+            background-color: #1b5e20;
+            transform: scale(1.05);
+        }
+
+        /* Profil Sekolah */
+        .profil {
+            padding: 50px 0;
+            background-color: #f1f1f1;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .profil h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        .profil p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Pembayaran Section */
+        .pembayaran {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .pembayaran h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        .pembayaran img {
+            width: 70%;
+            max-width: 400px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        /* Prestasi Siswa Section */
+        .prestasi {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .prestasi h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        .prestasi ul {
+            list-style: none;
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .prestasi ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Kontak Section */
+        .kontak {
+            padding: 50px 0;
+            background-color: #388e3c;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .kontak h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .kontak p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #388e3c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SMA 2</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#pembayaran">Pembayaran</a></li>
+                    <li><a href="#prestasi">Prestasi Siswa</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h2>Cara Baru Bayar Uang Pendidikan</h2>
+                <p>Sistem Pembayaran Uang Sekolah Terkini untuk Murid, Mahasiswa, dan Orang Tua.</p>
+                <a href="daftar.html" class="btn">Mulai Pembayaran</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Sekolah -->
+    <section class="profil" id="profil">
+        <div class="container">
+            <h2>Profil Sekolah</h2>
+            <p>Selamat datang di SMA 2, tempat pendidikan berkualitas yang memudahkan proses pembayaran SPP dan kegiatan lainnya. Kami mengedepankan teknologi untuk kenyamanan Anda! Sekolah kami berkomitmen untuk memberikan pendidikan yang relevan dengan kebutuhan masa depan. Kami juga terus berinovasi dalam mendukung kemajuan teknologi yang dapat mempermudah akses belajar dan mendukung potensi siswa dalam berbagai bidang. Kami memiliki fasilitas modern dan staf pengajar yang profesional yang siap memberikan pengalaman belajar terbaik bagi siswa kami.</p>
+        </div>
+    </section>
+
+    <!-- Pembayaran Section -->
+    <section class="pembayaran" id="pembayaran">
+        <div class="container">
+            <h2>Melalui Banyak Metode Pembayaran</h2>
+            <img src="pembayaran-image.jpg" alt="Metode Pembayaran">
+            <p>Pilih aplikasi pembayaran favorit Anda. Pembayaran dapat dilakukan 24 jam, dari mana saja, melalui berbagai metode seperti e-wallet, transfer bank, dan kartu kredit.</p>
+        </div>
+    </section>
+
+    <!-- Prestasi Siswa Section -->
+    <section class="prestasi" id="prestasi">
+        <div class="container">
+            <h2>Prestasi Siswa</h2>
+            <ul>
+                <li>Juara 1 Lomba Matematika Nasional 2025</li>
+                <li>Medali Perak Olimpiade Sains Internasional 2024</li>
+                <li>Juara 3 Kompetisi Debat Bahasa Indonesia tingkat Nasional 2025</li>
+                <li>Tim Robotika Sekolah Meraih Juara 2 di Lomba Robotik Nasional 2025</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="kontak" id="kontak">
+        <div class="container">
+            <h2>Kontak Kami</h2>
+            <p>Email: support@sma2.com</p>
+            <p>Telepon: +62 812 3000 1227</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SMA 2 | Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cari Kostum Cosplay</title>
+  <style>
+    :root {
+      --primary: #007BFF;
+      --dark: #003c7e;
+      --light: #f1f9ff;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--dark));
+      color: var(--white);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #searchBar {
+      padding: 12px;
+      width: 70%;
+      max-width: 400px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .search-container button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      background-color: var(--white);
+      color: var(--primary);
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: 10px;
+      margin: 15px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .card-content p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+        padding-top: 20px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      #searchBar {
+        width: 90%;
+      }
+    }/* Tombol Rental */
+.rental-button {
+  background-color: var(--primary);  /* Warna utama */
+  color: var(--white);               /* Teks putih */
+  border: none;                      /* Menghilangkan border */
+  padding: 12px 24px;                /* Ruang dalam tombol */
+  border-radius: var(--border-radius); /* Sudut membulat */
+  font-size: 16px;                   /* Ukuran font yang nyaman dibaca */
+  font-weight: 600;                  /* Berat font lebih tebal untuk menonjol */
+  cursor: pointer;                  /* Mengubah cursor menjadi pointer saat hover */
+  width: 100%;                       /* Tombol mengambil seluruh lebar container */
+  transition: all 0.3s ease;         /* Efek transisi halus saat interaksi */
+  text-align: center;                /* Menyelaraskan teks di tengah */
+  margin-top: 15px;                  /* Jarak atas tombol */
+}
+
+/* Efek hover - perubahan warna latar belakang dan bayangan */
+.rental-button:hover {
+  background-color: var(--accent);  /* Mengubah warna latar belakang saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan halus di bawah tombol */
+  transform: translateY(-2px);      /* Mengangkat tombol sedikit */
+}
+
+/* Efek fokus - perubahan border dan bayangan */
+.rental-button:focus {
+  outline: none;                    /* Menghilangkan outline default browser */
+  box-shadow: 0 0 10px var(--primary); /* Memberikan bayangan biru saat tombol difokuskan */
+}
+
+/* Animasi - efek klik dengan sedikit pengecilan ukuran */
+.rental-button:active {
+  transform: scale(0.98);            /* Mengurangi ukuran tombol saat ditekan */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Anime_logo.svg/1280px-Anime_logo.svg.png" alt="Logo" class="logo" />
+    <h1>Cari Kostum Cosplay</h1>
+    <p>Temukan kostum cosplay terbaik di kotamu!</p>
+    <p></p>
+    <div class="search-container">
+      <input type="text" id="searchBar" placeholder="Cari toko atau jenis kostum...">
+      <button onclick="handleSearch()">Cari</button>
+      <button onclick="handleReset()">Reset</button>
+    </div>
+  </header>
+
+  <main id="rentalList">
+    <!-- Kartu toko akan dimuat otomatis -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cari Kostum Cosplay.</p>
+    <p>Kontak Admin: <a href="mailto:admin@cosplayfinder.id">admin@cosplayfinder.id</a></p>
+  </footer>
+
+  <script>
+   const rentals = [
+  {
+    name: "Cosplay Corner Jakarta",
+    city: "Jakarta",
+    costumeTypes: ["Anime", "Game", "Fantasy"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?cosplay,anime"
+  },
+  {
+    name: "Sakura Costume Bandung",
+    city: "Bandung",
+    costumeTypes: ["Jepang Tradisional", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?kimono,cosplay"
+  },
+  {
+    name: "Otaku Outfit Surabaya",
+    city: "Surabaya",
+    costumeTypes: ["Anime", "Superhero"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?superhero,cosplay"
+  },
+  {
+    name: "Neo Cosplay Medan",
+    city: "Medan",
+    costumeTypes: ["Game", "Cyberpunk"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?cyberpunk,cosplay"
+  },
+  {
+    name: "Hero Wear Bali",
+    city: "Denpasar",
+    costumeTypes: ["Superhero", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?hero,cosplay"
+  },
+  {
+    name: "Galaxy Cosplay Makassar",
+    city: "Makassar",
+    costumeTypes: ["Sci-Fi", "Star Wars"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?scifi,cosplay"
+  },
+  {
+    name: "Senpai Costume Yogyakarta",
+    city: "Yogyakarta",
+    costumeTypes: ["Anime", "Maid", "Fantasy"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?anime,girl,cosplay"
+  },
+  {
+    name: "Otome Closet Semarang",
+    city: "Semarang",
+    costumeTypes: ["Lolita", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?lolita,cosplay"
+  },
+  {
+    name: "Chibi Costumes Bekasi",
+    city: "Bekasi",
+    costumeTypes: ["Anime", "Mascot", "Cartoon"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?mascot,cosplay"
+  },
+  {
+    name: "Fantasy Rental Palembang",
+    city: "Palembang",
+    costumeTypes: ["Elf", "Witch", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?witch,cosplay"
+  },
+  {
+    name: "Kawaii Renters Depok",
+    city: "Depok",
+    costumeTypes: ["Anime", "K-pop", "Harajuku"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?harajuku,cosplay"
+  },
+  {
+    name: "Costume Galaxy Tangerang",
+    city: "Tangerang",
+    costumeTypes: ["Superhero", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?spiderman,cosplay"
+  },
+  {
+    name: "Cosplay Hive Bogor",
+    city: "Bogor",
+    costumeTypes: ["Anime", "Game", "Medieval"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?knight,cosplay"
+  },
+  {
+    name: "Neko Wear Cirebon",
+    city: "Cirebon",
+    costumeTypes: ["Anime", "Neko", "Maid"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?catgirl,cosplay"
+  },
+  {
+    name: "Shinigami Rentals Malang",
+    city: "Malang",
+    costumeTypes: ["Bleach", "Samurai", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?samurai,cosplay"
+  },
+  {
+    name: "Pixel Cosplay Manado",
+    city: "Manado",
+    costumeTypes: ["Pixel Art", "Retro Game"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?retro,cosplay"
+  },
+  {
+    name: "Moonlight Wear Pontianak",
+    city: "Pontianak",
+    costumeTypes: ["Fantasy", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?moonlight,cosplay"
+  },
+  {
+    name: "Otaku Point Solo",
+    city: "Solo",
+    costumeTypes: ["Anime", "Naruto", "Bleach"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?naruto,cosplay"
+  },
+  {
+    name: "Zodiac Rental Balikpapan",
+    city: "Balikpapan",
+    costumeTypes: ["Zodiac", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?zodiac,cosplay"
+  },
+  {
+    name: "Kostum Kingdom Padang",
+    city: "Padang",
+    costumeTypes: ["Kerajaan", "Anime", "Tradisional"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?king,cosplay"
+  },
+  {
+    name: "Magic Cosplay Banjarmasin",
+    city: "Banjarmasin",
+    costumeTypes: ["Wizard", "Elf", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?wizard,cosplay"
+  },
+  {
+    name: "Ninja Rent Pekanbaru",
+    city: "Pekanbaru",
+    costumeTypes: ["Ninja", "Naruto", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?ninja,cosplay"
+  },
+  {
+    name: "Steampunk Style Medan",
+    city: "Medan",
+    costumeTypes: ["Steampunk", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?steampunk,cosplay"
+  },
+  {
+    name: "Coszone Serang",
+    city: "Serang",
+    costumeTypes: ["Anime", "Game", "Cartoon"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?cartoon,cosplay"
+  },
+  {
+    name: "Legendary Wear Mataram",
+    city: "Mataram",
+    costumeTypes: ["Legend", "Fantasy", "Anime"],
+    contact: "",
+    image: "https://source.unsplash.com/featured/?legend,cosplay"
+  }
+];
+
+
+function renderRentals(filter = "") {
+  const list = document.getElementById('rentalList');
+  list.innerHTML = "";
+
+  rentals
+    .map((r, index) => ({ ...r, id: index }))
+    .filter(r =>
+      r.name.toLowerCase().includes(filter.toLowerCase()) ||
+      r.costumeTypes.join(" ").toLowerCase().includes(filter.toLowerCase())
+    )
+    .forEach(r => {
+      const card = document.createElement('a');
+      card.href = `profile.html?id=${r.id}`;
+      card.className = 'card';
+      card.style.textDecoration = 'none';
+      card.style.color = 'inherit';
+      card.innerHTML = `
+        <img src="${r.image}" alt="Foto Kostum">
+        <div class="card-content">
+          <h3>${r.name}</h3>
+          <p><strong>Kota:</strong> ${r.city}</p>
+          <p><strong>Kostum:</strong> ${r.costumeTypes.join(", ")}</p>
+          ${r.contact ? `<p><strong>Kontak:</strong> ${r.contact}</p>` : ""}
+        </div>
+      `;
+      list.appendChild(card);
+    });
+}
+
+
+    function handleSearch() {
+      const keyword = document.getElementById('searchBar').value;
+      renderRentals(keyword);
+    }
+
+    function handleReset() {
+      document.getElementById('searchBar').value = '';
+      renderRentals();
+    }function renderRentals(filter = "") {
+  const list = document.getElementById('rentalList');
+  list.innerHTML = "";
+
+  rentals
+    .map((r, index) => ({ ...r, id: index }))
+    .filter(r =>
+      r.name.toLowerCase().includes(filter.toLowerCase()) ||
+      r.costumeTypes.join(" ").toLowerCase().includes(filter.toLowerCase())
+    )
+    .forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.textDecoration = 'none';
+      card.style.color = 'inherit';
+
+      // Add the image and content
+      card.innerHTML = `
+        <img src="${r.image}" alt="Foto Kostum">
+        <div class="card-content">
+          <h3>${r.name}</h3>
+          <p><strong>Kota:</strong> ${r.city}</p>
+          <p><strong>Kostum:</strong> ${r.costumeTypes.join(", ")}</p>
+          
+          <!-- Rental Button -->
+          <button class="rental-button" onclick="handleRental(${r.id})">Cek Rental</button>
+        </div>
+      `;
+
+      // Append the card to the list
+      list.appendChild(card);
+    });
+}
+
+// Handle the Rental button click
+function handleRental(id) {
+  const rental = rentals.find(r => r.id === id);
+  alert(`You are checking rental details for: ${rental.name}`);
+  // You can redirect to a detailed page or show a rental form
+  // Example: window.location.href = `rental-details.html?id=${rental.id}`;
+}
+
+
+    window.onload = () => renderRentals();
+  </script>
+</body>
+</html>
